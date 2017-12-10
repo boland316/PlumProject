@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/data.js"></script>
+        <script src="https://code.highcharts.com/modules/drilldown.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
+        <script>
+        
+        
+            function createGraph(){
+                
+                
+                var min = [];
+                var activity = [];
+                
+                $.ajax({
+                	url: 'getTableData.php',
+                	type: 'get',
+                	data: {},
+                    async: false,
+                	success: function(data){
+                	    
+                	    console.log(data);
+                	    
+                	    if(data != "problems"){
+                	        alert(data);
+                	        
+                	          var results = JSON.parse(data);
+                	          alert(results.length);
+                	          
+                	          
+                	          
+                	          for(var j=0; j < results.length; j++){
+                	            
+                	            var seriesMin;
+                	            var seriesActivity;
+                	            
+                	            var seriesMin = results[j];
+                                var seriesActivity = results[j];
+                                
+                                       
+                                        console.log(seriesMin[0]);
+                                        console.log(seriesActivity[1]);
+    
+                                
+                                activity.push(seriesActivity[1]);
+                	            min.push(seriesMin);
+                             
+                                
+                                        
+                	          }
+                	          
+                	          // when we are happy...
+                	          makeGraph();
+                	    }
+                	    else{
+                	          
+                	          alert("We have encountered an error!");
+                	          
+
+                	       }//end else
+                	},
+                	cache: false
+                });
+        
+            
+            
+            
+        function makeGraph(){
+            
+            
+                         
+                                                                                               
+                       Highcharts.chart('container', {
+                            chart: {
+                                plotBackgroundColor: null,
+                                plotBorderWidth: null,
+                                plotShadow: false,
+                                type: 'pie'
+                            },
+                            title: {
+                                text: 'Test'
+                            },
+                            tooltip: {
+                                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                            },
+                            plotOptions: {
+                                pie: {
+                                    allowPointSelect: true,
+                                    cursor: 'pointer',
+                                    dataLabels: {
+                                        enabled: true,
+                                        format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                    }
+                                }
+                            },
+                            series: [{
+                            data: [{
+                                name: activity,
+                                y: parseInt(min[0])
+                            }]
+                            
+                        }]
+                        
+                    });
+                
+                   
+                    }//end makeGraph
+                }//end function
+            
+        </script>
+    </head>
+    <body onload="createGraph();">
+        
+        
+        
+        <div id="createPara"></div>
+        
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+        
+
+
+    </body>
+</html>

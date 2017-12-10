@@ -1,0 +1,128 @@
+#section1{
+    background-color: #d9d9d9;
+    height:80%;
+}
+#secHeading{
+	  color: white;
+    margin:18%;
+    
+}
+#section2{
+ height:500px;
+ padding:10px;
+}
+#miniSec{
+    margin-top:7%;
+}
+#miniSec2{
+    margin-top:5%;
+}
+
+#section3{
+    height:300px;
+    background-color:#d9d9d9; 
+}
+#createPara{
+    margin-top:100px;
+}
+#secion4{
+  background-color:red;
+}
+#miniSec3{
+  margin-top:100px;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("parallax.jpg");
+
+    /* Set a specific height */
+    height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.projects{
+    height:30%;
+    margin-top:10%;
+    margin:5px;
+    width:100%;
+    border:2px;
+    border-style: solid;
+    border-color: white;
+    
+}
+body {
+  font-size: 120%;
+  background: #F8F8FF;
+}
+
+.header {
+  width: 30%;
+  margin: 50px auto 0px;
+  color: white;
+  background: #591259;
+  text-align: center;
+  border: 1px solid #591259;
+  border-bottom: none;
+  border-radius: 10px 10px 0px 0px;
+  padding: 20px;
+}
+form, .content {
+  width: 30%;
+  margin: 0px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 0px 0px 10px 10px;
+}
+.input-group {
+  margin: 10px 0px 10px 0px;
+}
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: #591259;
+  border: none;
+  border-radius: 5px;
+}
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
+}
+.success {
+  color: #3c763d; 
+  background: #dff0d8; 
+  border: 1px solid #3c763d;
+  margin-bottom: 20px;
+}
+#banner{
+  width:35%;
+  height:35%;
+}
+#login{
+  padding-right:15px;
+}
